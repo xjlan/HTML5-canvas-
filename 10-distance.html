@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <textarea id="log" cols="30" rows="2"></textarea>
+    <script src="./js/utils.js"></script>
+    <script>
+        window.onload = function(){
+            var canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d'),
+                log = document.getElementById('log');
+            var rect1 = {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height
+            };
+            context.fillStyle = "#000";
+            context.fillRect(rect1.x - 2, rect1.y - 2, 4, 4);
+            var rect2 = {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height
+            };
+            context.fillStyle = "f00";
+            context.fillRect(rect2.x - 2, rect2.y - 2, 4, 4);
+            var dx = rect1.x - rect2.x,
+                dy = rect1.y - rect2.y,
+                dist = Math.sqrt(dx * dx + dy * dy);
+            log.value = 'distance: ' + dist + 'px';
+        }
+    </script>
+</body>
+</html>

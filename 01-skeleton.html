@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <script>
+        if(document.createElement('canvas').getContext){
+            console.log('Success! The canvas element is supported!');
+        }
+    </script> -->
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800">
+        <p>This browser does not support this <code>canvas</code>element.</p>
+    </canvas>
+    <script src="./js/utils.js"></script>
+    <script>
+        window.onload = function(){
+            // var canvas = document.getElementById('canvas'),
+            //     touch = utils.captureTouch(canvas);
+            //     console.log(touch.isPressed);
+            // canvas.addEventListener('touchmove', () =>{
+            //     console.log('x:' + touch.x + ',y:' + touch.y);
+            // }, false);
+                
+            function onKeyboardEvent(event){
+                console.log(event.keyCode);
+                switch(event.keyCode){
+                    case 37:
+                        console.log('left');
+                        break;
+                    case 38:
+                        console.log('up');
+                        break;
+                    case 39:
+                        console.log('right');
+                        break;
+                    case 40:
+                        console.log('down');
+                        break;
+                }
+            }
+            window.addEventListener('keydown', onKeyboardEvent, false);
+            // window.addEventListener('keyup', onKeyboardEvent, false);
+            
+
+            /*
+             * window.requestAnimationFrame接收一个会调函数作为参数，并确保在重绘屏幕前执行该会调函数
+             * @param drawFrame window.requestAnimationFrame将drawFrame函数自身的引用作为参数值传入
+             * @param canvas 要重绘的canvas
+             */
+            // (function drawFrame(){
+            //     window.requestAnimationFrame(drawFrame, canvas);
+            // }());
+
+        }
+    </script>
+</body>
+</html>
